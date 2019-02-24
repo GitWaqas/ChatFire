@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "905411253643",
+    "firebase_url": "https://chatfire-d588d.firebaseio.com",
+    "project_id": "chatfire-d588d",
+    "storage_bucket": "chatfire-d588d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:905411253643:android:0c8509acc767048e",
+        "android_client_info": {
+          "package_name": "com.example.chatfire"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "905411253643-oo8dtljlvbq6bmgs81p1967mo0mqgu77.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.chatfire",
+            "certificate_hash": "b97fc60d739d0a65b255645980715e1f46809997"
+          }
+        },
+        {
+          "client_id": "905411253643-5n0hvok0er7qghtjmguc7kj8todgbs3e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAy-VaoiYwX4BC9Dgm5yRTwyHhhWZ80Gs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "905411253643-5n0hvok0er7qghtjmguc7kj8todgbs3e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
