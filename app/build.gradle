@@ -5,7 +5,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.google.gms.google-services'
 
-androidExtensions{
+androidExtensions {
     experimental = true
 }
 
@@ -36,6 +36,10 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:16.0.3'
     implementation 'com.google.firebase:firebase-storage:16.0.1'
     implementation 'com.google.firebase:firebase-database:16.0.1'
+
+    // anko
+
+    implementation "org.jetbrains.anko:anko:$anko_version"
 
     // used for circle image
 
