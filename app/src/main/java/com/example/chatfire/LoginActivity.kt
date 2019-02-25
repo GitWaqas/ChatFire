@@ -7,6 +7,10 @@ import android.util.Log
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
+import org.jetbrains.anko.clearTask
+import org.jetbrains.anko.intentFor
+import org.jetbrains.anko.newTask
+import org.jetbrains.anko.startActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -37,9 +41,11 @@ class LoginActivity : AppCompatActivity() {
                 if (!it.isSuccessful) return@addOnCompleteListener
                 //else
                 Log.d(TAG, "User logged in with uid: ${it.result.user.uid}")
-                val intent = Intent(this,MessagesOverviewActivity::class.java)
+                /*val intent = Intent(this,MessagesOverviewActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
-                startActivity(intent)
+                startActivity(intent)*/
+
+                startActivity(intentFor<MessagesOverviewActivity>().clearTask().newTask())
             }
             .addOnFailureListener{
                 Log.d(TAG,"login failed: ${it.message}")

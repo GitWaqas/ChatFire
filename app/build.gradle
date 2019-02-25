@@ -35,7 +35,18 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:16.0.3'
     implementation 'com.google.firebase:firebase-core:16.0.3'
     implementation 'com.google.firebase:firebase-storage:16.0.1'
+
+    // firebase ui for auth
+    implementation 'com.firebaseui:firebase-ui-auth:4.0.1'
+
+
     implementation 'com.google.firebase:firebase-database:16.0.1'
+
+
+    // old play services required
+
+    //implementation 'com.google.android.gms:play-services-stats:15.0.1'
+
 
     // anko
 
@@ -53,6 +64,11 @@ dependencies {
     // picasso
 
     implementation 'com.squareup.picasso:picasso:2.71828'
+
+    // facebook
+    implementation 'com.facebook.android:facebook-android-sdk:[4,5)'
+
+
 
 
 
