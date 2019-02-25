@@ -10,6 +10,7 @@ import kotlinx.android.synthetic.main.activity_login.*
 import org.jetbrains.anko.clearTask
 import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.newTask
+import org.jetbrains.anko.sdk25.coroutines.onClick
 import org.jetbrains.anko.startActivity
 
 class LoginActivity : AppCompatActivity() {
@@ -24,6 +25,10 @@ class LoginActivity : AppCompatActivity() {
 
         signin_button.setOnClickListener {
          loginUser()
+        }
+
+        resetpw_textView.onClick {
+            startActivity(intentFor<ResetPasswordActivity>())
         }
     }
 
