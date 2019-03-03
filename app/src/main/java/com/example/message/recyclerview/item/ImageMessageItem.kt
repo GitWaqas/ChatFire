@@ -4,7 +4,7 @@ import android.content.Context
 import com.example.message.R
 import com.example.message.glide.GlideApp
 import com.example.message.model.ImageMessage
-import com.example.message.util.StorageUtil
+import com.example.message.controller.StorageController
 import com.xwray.groupie.kotlinandroidextensions.ViewHolder
 import kotlinx.android.synthetic.main.item_image_message.*
 
@@ -16,7 +16,7 @@ class ImageMessageItem(val message: ImageMessage,
     override fun bind(viewHolder: ViewHolder, position: Int) {
         super.bind(viewHolder, position)
         GlideApp.with(context)
-            .load(StorageUtil.pathToReference(message.imagePath))
+            .load(StorageController.pathToReference(message.imagePath))
             .placeholder(R.drawable.ic_image_black_24dp)
             .into(viewHolder.imageView_message_image)
     }

@@ -7,14 +7,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.message.AppConstants
-import com.example.message.ChatActivity
+import com.example.message.activity.ChatActivity
 import com.google.firebase.firestore.ListenerRegistration
 //import com.example.message.AppConstants
-//import com.example.message.ChatActivity
+//import com.example.message.activity.ChatActivity
 
 import com.example.message.R
 import com.example.message.recyclerview.item.PersonItem
-import com.example.message.util.FireStoreUtil
+import com.example.message.controller.FireStoreController
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.OnItemClickListener
 import com.xwray.groupie.Section
@@ -35,14 +35,14 @@ class PeopleFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
 
         userListenerRegistration =
-            FireStoreUtil.addUsersListener(this.activity!!, this::updateRecyclerView)
+            FireStoreController.addUsersListener(this.activity!!, this::updateRecyclerView)
 
         return inflater.inflate(R.layout.fragment_people, container, false)
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        FireStoreUtil.removeListener(userListenerRegistration)
+        FireStoreController.removeListener(userListenerRegistration)
         shouldInitRecyclerView = true
     }
 

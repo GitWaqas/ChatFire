@@ -1,7 +1,9 @@
-package com.example.message
+package com.example.message.activity
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.example.message.activity.MainActivity
+import com.example.message.activity.SignInActivity
 import com.google.firebase.auth.FirebaseAuth
 import org.jetbrains.anko.clearTask
 import org.jetbrains.anko.intentFor

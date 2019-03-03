@@ -1,4 +1,4 @@
-package com.example.message.util
+package com.example.message.controller
 
 import android.content.Context
 import android.util.Log
@@ -17,7 +17,7 @@ import com.xwray.groupie.kotlinandroidextensions.Item
 
 
 
-object FireStoreUtil {
+object FireStoreController {
     private val fireStoreInstance: FirebaseFirestore by lazy { FirebaseFirestore.getInstance() }
     private val currentUserRef: DocumentReference
         get() = fireStoreInstance.document(

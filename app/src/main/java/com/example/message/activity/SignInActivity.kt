@@ -1,11 +1,12 @@
-package com.example.message
+package com.example.message.activity
 
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import com.example.message.R
 import com.example.message.service.MyFirebaseInstanceIDService
-import com.example.message.util.FireStoreUtil
+import com.example.message.controller.FireStoreController
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.ErrorCodes
 import com.firebase.ui.auth.IdpResponse
@@ -41,7 +42,7 @@ class SignInActivity : AppCompatActivity() {
 
             if (resultCode == Activity.RESULT_OK) {
                 val progressDialog = indeterminateProgressDialog("Setting up your account")
-                FireStoreUtil.initCurrentUserIfFirstTime {
+                FireStoreController.initCurrentUserIfFirstTime {
 
                     startActivity(intentFor<MainActivity>().newTask().clearTask())
                     val registrationToken = FirebaseInstanceId.getInstance().token

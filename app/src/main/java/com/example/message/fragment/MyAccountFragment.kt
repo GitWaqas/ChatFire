@@ -11,10 +11,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.message.R
-import com.example.message.SignInActivity
+import com.example.message.activity.SignInActivity
 import com.example.message.glide.GlideApp
-import com.example.message.util.FireStoreUtil
-import com.example.message.util.StorageUtil
+import com.example.message.controller.FireStoreController
+import com.example.message.controller.StorageController
 import com.firebase.ui.auth.AuthUI
 import kotlinx.android.synthetic.main.fragment_my_account.*
 import kotlinx.android.synthetic.main.fragment_my_account.view.*
@@ -52,14 +52,14 @@ class MyAccountFragment : Fragment() {
 
             btn_save.setOnClickListener {
                 if (::selectedImageBytes.isInitialized)
-                    StorageUtil.uploadProfilePhoto(selectedImageBytes) { imagePath ->
-                        FireStoreUtil.updateCurrentUser(
+                    StorageController.uploadProfilePhoto(selectedImageBytes) { imagePath ->
+                        FireStoreController.updateCurrentUser(
                             editText_name.text.toString(),
                             editText_bio.text.toString(), imagePath
                         )
                     }
                 else
-                    FireStoreUtil.updateCurrentUser(
+                    FireStoreController.updateCurrentUser(
                         editText_name.text.toString(),
                         editText_bio.text.toString(), null
                     )
@@ -117,13 +117,13 @@ class MyAccountFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        FireStoreUtil.getCurrentUser { user ->
+        FireStoreController.getCurrentUser { user ->
             if (this@MyAccountFragment.isVisible) {
                 editText_name.setText(user.name)
                 editText_bio.setText(user.bio)
                 if (!pictureJustChanged && user.avatarPath != null)
                     GlideApp.with(this)
-                        .load(StorageUtil.pathToReference(user.avatarPath))
+                        .load(StorageController.pathToReference(user.avatarPath))
                         .placeholder(R.drawable.ic_account_circle_black_24dp)
                         .into(imageView_profile_picture)
             }

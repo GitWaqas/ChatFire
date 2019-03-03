@@ -4,7 +4,7 @@ import android.content.Context
 import com.example.message.R
 import com.example.message.glide.GlideApp
 import com.example.message.model.User
-import com.example.message.util.StorageUtil
+import com.example.message.controller.StorageController
 import com.xwray.groupie.kotlinandroidextensions.Item
 import com.xwray.groupie.kotlinandroidextensions.ViewHolder
 import kotlinx.android.synthetic.main.item_person.*
@@ -20,7 +20,7 @@ class PersonItem(val person: User,
         viewHolder.textView_bio.text = person.bio
         if (person.avatarPath != null)
             GlideApp.with(context)
-                .load(StorageUtil.pathToReference(person.avatarPath))
+                .load(StorageController.pathToReference(person.avatarPath))
                 .placeholder(R.drawable.ic_account_circle_black_24dp)
                 .into(viewHolder.imageView_profile_picture)
     }

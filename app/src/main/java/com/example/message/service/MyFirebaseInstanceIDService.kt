@@ -1,6 +1,6 @@
 package com.example.message.service
 
-import com.example.message.util.FireStoreUtil
+import com.example.message.controller.FireStoreController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.iid.FirebaseInstanceId
 import com.google.firebase.iid.FirebaseInstanceIdService
@@ -20,7 +20,7 @@ class MyFirebaseInstanceIDService : FirebaseInstanceIdService() {
         fun addTokenToFirestore(newRegistrationToken: String?) {
             if (newRegistrationToken == null) throw NullPointerException("token is null.")
 
-            FireStoreUtil.getFCMRegistrationTokens { tokens ->
+            FireStoreController.getFCMRegistrationTokens { tokens ->
 
                //check for duplicates
 
@@ -28,7 +28,7 @@ class MyFirebaseInstanceIDService : FirebaseInstanceIdService() {
                     return@getFCMRegistrationTokens
 
                 tokens.add(newRegistrationToken)
-                FireStoreUtil.setFCMRegistrationTokens(tokens)
+                FireStoreController.setFCMRegistrationTokens(tokens)
             }
         }
     }
