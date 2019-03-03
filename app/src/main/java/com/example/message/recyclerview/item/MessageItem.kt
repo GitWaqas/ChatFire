@@ -24,7 +24,7 @@ abstract class MessageItem(private val message: Message)
 
     private fun setTimeText(viewHolder: ViewHolder) {
         val dateFormat = SimpleDateFormat
-            .getDateTimeInstance(SimpleDateFormat.SHORT, SimpleDateFormat.SHORT)
+            .getTimeInstance(SimpleDateFormat.SHORT)
         viewHolder.textView_message_time.text = dateFormat.format(message.time)
     }
 
