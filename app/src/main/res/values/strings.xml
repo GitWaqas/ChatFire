@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Message</string>
+    <string name="title_activity_main">Conversations</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="facebook_application_id">296003631074056</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">fb296003631074056</string>
+    <string name="conversations">Conversations</string>
+    <string name="settings">Settings</string>
+    <string name="question">Really?</string>
+
+
+</resources>
