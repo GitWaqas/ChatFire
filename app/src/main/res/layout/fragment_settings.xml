@@ -3,7 +3,7 @@
                                              xmlns:tools="http://schemas.android.com/tools"
                                              android:layout_width="match_parent"
                                              android:layout_height="match_parent"
-                                             tools:context=".fragment.MyAccountFragment">
+                                             tools:context=".fragment.MySettingsFragment">
 
     <ImageView
             android:id="@+id/imageView_profile_picture"
@@ -43,7 +43,7 @@
             android:maxHeight="150dp"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp"
-            android:hint="My Bio"
+            android:hint="My info"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -62,7 +62,8 @@
             android:layout_marginRight="16dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:backgroundTint="?attr/colorAccent"
+            android:backgroundTint="?attr/colorPrimary"
+            android:textColor="@android:color/white"
             android:text="Save"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -98,7 +99,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp"
-            android:backgroundTint="?attr/colorPrimary"
+            android:backgroundTint="?attr/colorAccent"
             android:textColor="@android:color/white"
             android:text="Delete"
             app:layout_constraintBottom_toBottomOf="parent"

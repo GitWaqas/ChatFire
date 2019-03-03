@@ -16,8 +16,8 @@ import com.example.message.glide.GlideApp
 import com.example.message.controller.FireStoreController
 import com.example.message.controller.StorageController
 import com.firebase.ui.auth.AuthUI
-import kotlinx.android.synthetic.main.fragment_my_account.*
-import kotlinx.android.synthetic.main.fragment_my_account.view.*
+import kotlinx.android.synthetic.main.fragment_settings.*
+import kotlinx.android.synthetic.main.fragment_settings.view.*
 import org.jetbrains.anko.clearTask
 import org.jetbrains.anko.newTask
 import org.jetbrains.anko.noButton
@@ -28,7 +28,7 @@ import org.jetbrains.anko.yesButton
 import java.io.ByteArrayOutputStream
 
 
-class MyAccountFragment : Fragment() {
+class MySettingsFragment : Fragment() {
 
     private val RC_SELECT_IMAGE = 2
     private lateinit var selectedImageBytes: ByteArray
@@ -38,7 +38,7 @@ class MyAccountFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_my_account, container, false)
+        val view = inflater.inflate(R.layout.fragment_settings, container, false)
 
         view.apply {
             imageView_profile_picture.setOnClickListener {
@@ -68,18 +68,18 @@ class MyAccountFragment : Fragment() {
 
             btn_sign_out.setOnClickListener {
                 AuthUI.getInstance()
-                    .signOut(this@MyAccountFragment.context!!)
+                    .signOut(this@MySettingsFragment.context!!)
                     .addOnCompleteListener {
                         startActivity(intentFor<SignInActivity>().newTask().clearTask())
                     }
             }
 
             btn_delete.setOnClickListener {
-                alert("procees with caution") {
+                alert(context.getString(R.string.warning)) {
                     title = context.getString(R.string.question)
                     yesButton {
                         AuthUI.getInstance()
-                            .delete(this@MyAccountFragment.context!!)
+                            .delete(this@MySettingsFragment.context!!)
                             .addOnCompleteListener {
                                 startActivity(intentFor<SignInActivity>().newTask().clearTask())
                                 toast("Wiped")
@@ -118,7 +118,7 @@ class MyAccountFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         FireStoreController.getCurrentUser { user ->
-            if (this@MyAccountFragment.isVisible) {
+            if (this@MySettingsFragment.isVisible) {
                 editText_name.setText(user.name)
                 editText_bio.setText(user.bio)
                 if (!pictureJustChanged && user.avatarPath != null)

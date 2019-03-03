@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import com.example.message.R
-import com.example.message.fragment.MyAccountFragment
+import com.example.message.fragment.MySettingsFragment
 import com.example.message.fragment.PeopleFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.navigation_account -> {
-                    replaceFragment(MyAccountFragment())
+                    replaceFragment(MySettingsFragment())
                     true
                 }
                 else -> false
